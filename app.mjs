@@ -1,22 +1,10 @@
-//import { characters, greet } from './characters.mjs';
-
-//import * as char from './characters.mjs';
-//import defaultExport from './characters.mjs';
-
-//import defaultExport, { characters, greet } from './characters.mjs';
-
-//import defaultExport, * as char from './characters.mjs';
-
-import defaultExport, { characters, greet as hello } from './characters.mjs'
-
-
-// for (const c of char.characters) {
-//     char.greet(c);
-// }
-
-for (const c of characters) {
-    hello(c);
-}
-
-
-defaultExport();
+async function main() {
+    try {
+        const { characters, greet } = await import("./characterss.mjs"); // опечатка
+        for (const c of characters) {
+            greet(c);
+    }} catch(e) {
+        console.log("Ошибочка вышла!")
+    } 
+};
+main();
